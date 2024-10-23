@@ -1,0 +1,312 @@
+/* Basic Reset */
+body{
+    background-color: #021526;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Menu Icon and Options */
+.menu {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    z-index: 1000;
+}
+
+.menu-icon {
+    font-size: 30px;
+    cursor: pointer;
+    color: white;
+}
+
+.menu-options {
+    display: none;
+    position: absolute;
+    top: 35px;
+    right: 0;
+    background-color: #0C134F;
+    margin: 5px;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    width: fit-content;
+    height: auto;
+}
+
+.menu-options a {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 18px;
+    letter-spacing: 1px;
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    padding: 10px;
+    transition: background 0.3s;
+    width: 210px;
+}
+
+.menu-options a:hover {
+    background-color: black;
+}
+
+/* Image Carousel */
+.carousel {
+    pointer-events: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20%;
+    height: 100%;
+    margin: 50px auto;
+    position: relative;
+    overflow: hidden;
+    background: transparent;
+}
+
+
+@media (max-width: 768px) {
+    .carousel {
+        width: 100%;
+    }
+    
+    .image-links {
+        flex-direction: column; /* Stack items vertically */
+        width: 100%;
+    }
+
+    .image-links a {
+        width: 100%; /* Make each card take full width */
+        margin: 10px 0; /* Add some margin between cards */
+    }
+
+    .Gift {
+        font-size: 18px;
+    }
+}
+
+
+
+.carousel-inner {
+    display: flex;
+    overflow: hidden;
+    width: fit-content;
+    height: 100%;
+    object-fit:fill;
+}
+
+.carousel-inner img {
+    width: 100%;
+    height: 300px;
+    object-fit:fill;
+    flex: 0 0 100%;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.789);
+    transition: transform 1s ease;
+}
+
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.prev {
+    left: 0;
+}
+
+.next {
+    right: 0;
+}
+
+/* Bullet Points */
+.carousel-indicators {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.dot {
+    height: 15px;
+    width: 15px;
+    margin: 0 5px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.dot.active {
+    background-color: #717171;
+}
+
+
+.Gift {
+    text-align: center;
+    font-size: 48px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: white;
+    margin: 20px 0;
+    letter-spacing: 5px;
+}
+
+/* Down Arrow */
+.down-arrow {
+    text-align: center;
+    font-size: 50px;
+    color: white;
+    margin: 20px 0;
+    cursor: pointer;
+    animation: shake 1s infinite;
+}
+
+@keyframes shake {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+}
+
+/* Clickable Images Section */
+.image-links {
+    display: flex;
+    justify-content: space-around;
+    margin: 0 10px;
+    gap: 10px;
+}
+
+
+.image-links a {
+    flex: 1;
+    transition: flex 0.5s;
+}
+
+.image-links a img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.image-links a:hover {
+    flex: 1.3;
+}
+
+.image-links a:hover ~ a {
+    flex: 0.7;
+}
+
+/* Link to Font Awesome CDN in the <head> section */
+.image-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    flex-wrap: wrap;
+    padding: 0px;
+}
+
+.card-link {
+    display: block;
+    text-decoration: none;
+    color: #ffffff; /* Text color */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
+    padding: 20px;
+    text-align: center;
+    width: 400px;
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.amazon{
+    background-color: rgb(206, 154, 0);
+}
+.paypal{
+    background-color: rgb(0, 23, 151);
+}
+.google{
+    background-color: rgb(1, 74, 18);
+}
+.steam{
+    background-color: rgb(97, 0, 119);
+}
+
+.facebook{
+    background-color: rgb(28, 2, 106);
+}
+
+
+.card-link:hover {
+    transform: scale(1.0);
+}
+
+.card-title {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.icon {
+    font-size: 40px;
+    margin-top: 10px;
+    display: block;
+}
+
+
+
+.block {
+    position: relative;
+  }
+  
+  .block:before, .block:after {
+    content: '';
+    position: absolute;
+    left: -2px;
+    top: -2px;
+    background: linear-gradient(45deg, #fb0094, #0000ff, #00ff00,#ffff00, #ff0000, #fb0094, 
+      #0000ff, #00ff00,#ffff00, #ff0000);
+    background-size: 400%;
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    z-index: -1;
+    animation: steam 20s linear infinite;
+  }
+
+
+  
+  .block2:before, .block2:after {
+    content: '';
+    position: absolute;
+    left: -2px;
+    top: -2px;
+    background: linear-gradient(45deg, #fb0094, #0000ff, #00ff00,#ffff00, #ff0000, #fb0094, 
+      #0000ff, #00ff00,#ffff00, #ff0000);
+    background-size: 400%;
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    z-index: -1;
+    animation: steam 20s linear infinite;
+  }
+  
+  @keyframes steam {
+    0% {
+      background-position: 0 0;
+    }
+    50% {
+      background-position: 400% 0;
+    }
+    100% {
+      background-position: 0 0;
+    }
+  }
+  
+  .block:after {
+    filter: blur(10px);
+  }
+  .block2:after {
+    filter: blur(50px);
+  }
